@@ -1,12 +1,10 @@
 import socket
 
-HOST = 'localhost' #coloca o host do servidor
-PORT = 100
+target_host = 'localhost'
+target_port = 1235
 
-s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-
-s.connect((HOST,PORT))
-
-
-s.send("Hello world".encode())
-s.close()
+client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+client.connect((target_host,target_port))
+client.send('Client Conectando ao server'.encode())
+respose = client.recv(4096)
+print(str(respose))

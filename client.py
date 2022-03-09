@@ -1,5 +1,4 @@
 import socket
-from tkinter import filedialog
 
 HOST = 'localhost' #coloca o host do servidor
 PORT = 100
